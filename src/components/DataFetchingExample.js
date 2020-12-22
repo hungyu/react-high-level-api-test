@@ -79,7 +79,7 @@ const ParallelFetch = () => {
 const FetchApiWithCustomHooks = () => {
 	const { isLoading, isError, errorMsg, result: {
 		users = []
-	} = {} } = useFetchApi('/api/users-error');
+	} = {} } = useFetchApi('/api/users');
 
 	if (isLoading) return <div>isLoading ...</div>;
 	if (isError) return <div>{ errorMsg } </div>
@@ -94,7 +94,6 @@ const FetchApiWithCustomHooks = () => {
 			}
 	</div>
 }
-
 
 const ShowList = () => {
 	return (
