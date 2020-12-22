@@ -1,4 +1,6 @@
 import React, { useEffect, useState, Fragment } from 'react'
+// custom hooks
+import useFetchApi from '../hooks/useFetchApi';
 
 // get users
 async function getUserList() {
@@ -74,11 +76,26 @@ const ParallelFetch = () => {
 	return <div>test</div>
 }
 
+const FetchApiWithCustomHooks = () => {
+	const data = useFetchApi('/api/users') || [];
+
+	return <div>
+		API fetch list with custom Hooks:
+			{
+				data.map(({ name, id }) => {
+					return <div key={id}>{name}</div>
+				})
+			}
+	</div>
+}
+
 
 const ShowList = () => {
 	return (
 		<Fragment>
 			<ParallelFetch />
+			<DataFetchingExample />
+			<FetchApiWithCustomHooks />
 		</Fragment>
 	)
 }
