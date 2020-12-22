@@ -77,12 +77,18 @@ const ParallelFetch = () => {
 }
 
 const FetchApiWithCustomHooks = () => {
-	const data = useFetchApi('/api/users') || [];
+	const { isLoading, isError, errorMsg, result: {
+		users = []
+	} = {} } = useFetchApi('/api/users-error');
+
+	if (isLoading) return <div>isLoading ...</div>;
+	if (isError) return <div>{ errorMsg } </div>
+
 
 	return <div>
 		API fetch list with custom Hooks:
 			{
-				data.map(({ name, id }) => {
+				users.map(({ name, id }) => {
 					return <div key={id}>{name}</div>
 				})
 			}
