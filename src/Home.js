@@ -23,6 +23,7 @@ const ListRoutes = () => {
 }
 
 export default function Home(props) {
+	console.log('in home');
 	return (
 		<div>
 			<h1>This is home page</h1>

@@ -16,6 +16,7 @@ const getRoute = (routeConfig) => {
 
 function Routes() {
 	const Routes = getRoute(routeConfig);
+
   return (
     <Router>
       <Switch>

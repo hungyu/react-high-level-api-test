@@ -10,7 +10,29 @@ import InputWithRef from '../components/InputWithRef';
 import ForwardRefComponent from '../components/ForwardRefComponent';
 import DataFetchingExample from '../components/DataFetchingExample'
 
+// react insect catching game
+import InsectCatchingGame from '../components/insectCatchingGame/index';
+
+// movie
+import OMDBMovie from '../components/OMDBMovie/index';
+import MoviePage from '../components/OMDBMovie/MoviePage';
+
 const routeConfig = [
+	{
+		path: '/movies/:params',
+		component: 'MoviePage',
+		name: 'singe movie page'
+	},
+	{
+		path: '/omdb-movie',
+		component: 'OMDBMovie',
+		name: 'omdb movie'
+	},
+	{
+		path: '/insect-catching',
+		component: 'InsectCatchingGame',
+		name: 'insect catching game'
+	},
 	{
 		path: '/data-fetching',
 		component: 'DataFetchingExample',
@@ -73,7 +95,10 @@ export const routesMap = {
 	CallbackCompnent,
 	InputWithRef,
 	ForwardRefComponent,
-	DataFetchingExample
+	DataFetchingExample,
+	InsectCatchingGame,
+	OMDBMovie,
+	MoviePage
 }
 
 export const RoutesContext = createContext(routeConfig);
