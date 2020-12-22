@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 
-export default function DataFetchingExample() {
-	const [list, setList] = useState([])
+// get users
+async function getUserList() {
+	return await fetch('/api/users');
+}
+
+// get users, but api return 500
+async function getUserListFail() {
+	return await fetch('/api/users-error');
+}
+
+export function DataFetchingExample() {
+	const [list, setList] = useState([]);
 
 	useEffect(() => {
-		// get users
-		async function getUserList() {
-			return await fetch('/api/users');
-		}
-
-		// get users, but api return 500
-		async function getUserListFail() {
-			return await fetch('/api/users-error');
-		}
-
 		getUserList()
 			.then((res)=> {
 				if (!res.ok) {
@@ -56,3 +56,31 @@ export default function DataFetchingExample() {
 		</div>
 	)
 }
+
+const ParallelFetch = () => {
+	useEffect(() => {
+		Promise.all([getUserList(), getUserListFail()])
+			.then(res => {
+				return Promise.all(res.map(r => r.json()));
+			})
+			.then(data => {
+				// handle data and errors 
+			})
+			.catch(data => {
+				console.log(data);
+			})
+	}, [])
+
+	return <div>test</div>
+}
+
+
+const ShowList = () => {
+	return (
+		<Fragment>
+			<ParallelFetch />
+		</Fragment>
+	)
+}
+
+export default ShowList;
