@@ -5,14 +5,16 @@ const Timer = ({ deleteTimer, uuid }) => {
 	const [count, setCount] = useState(1);
 
 	useEffect(() => {
-		const id = setTimeout(() => {
-			setTimer(timer + count)
+		const id = setInterval(() => {
+			// use function update state to prevent useEffect to call to much
+			// https://reactjs.org/docs/hooks-reference.html#functional-updates
+			setTimer((t) => t + count)
 		}, 1000)
 
 		return () => {
-			clearTimeout(id)
+			clearInterval(id)
 		};
-	}, [timer, count])
+	}, [count])
 
 	return <div>
 		Timer: {timer}
