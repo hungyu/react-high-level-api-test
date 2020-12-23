@@ -55,7 +55,7 @@ export default function TimerLayout() {
 			timerRef.current = newTimerList
 			setTimerList(newTimerList)
 		},
-		[setTimerList]
+		[setTimerList, timerRef]
 	);
 
 	return (
