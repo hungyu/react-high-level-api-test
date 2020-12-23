@@ -16,8 +16,14 @@ import InsectCatchingGame from '../components/insectCatchingGame/index';
 // movie
 import OMDBMovie from '../components/OMDBMovie/index';
 import MoviePage from '../components/OMDBMovie/MoviePage';
+import Timer from '../components/Timer/Timer';
 
 const routeConfig = [
+	{
+		path: '/timer',
+		component: 'Timer',
+		name: 'timer component'
+	},
 	{
 		path: '/movies/:params',
 		component: 'MoviePage',
@@ -98,7 +104,8 @@ export const routesMap = {
 	DataFetchingExample,
 	InsectCatchingGame,
 	OMDBMovie,
-	MoviePage
+	MoviePage,
+	Timer
 }
 
 export const RoutesContext = createContext(routeConfig);
