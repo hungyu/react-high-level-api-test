@@ -18,7 +18,15 @@ import OMDBMovie from '../components/OMDBMovie/index';
 import MoviePage from '../components/OMDBMovie/MoviePage';
 import Timer from '../components/Timer/Timer';
 
+// auto complete
+import AutoComplete from '../components/AutoComplete/index';
+
 const routeConfig = [
+	{
+		path: '/auto-complete',
+		component: 'AutoComplete',
+		name: 'auto complete input'
+	},
 	{
 		path: '/timer',
 		component: 'Timer',
@@ -105,7 +113,8 @@ export const routesMap = {
 	InsectCatchingGame,
 	OMDBMovie,
 	MoviePage,
-	Timer
+	Timer,
+	AutoComplete
 }
 
 export const RoutesContext = createContext(routeConfig);
