@@ -21,7 +21,15 @@ import Timer from '../components/Timer/Timer';
 // auto complete
 import AutoComplete from '../components/AutoComplete/index';
 
+// reducx implementation
+import Todo from '../components/ReduxImplementation/Todo';
+
 const routeConfig = [
+	{
+		path: '/todo-testing',
+		component: 'Todo',
+		name: 'implement redux'
+	},
 	{
 		path: '/auto-complete',
 		component: 'AutoComplete',
@@ -114,7 +122,8 @@ export const routesMap = {
 	OMDBMovie,
 	MoviePage,
 	Timer,
-	AutoComplete
+	AutoComplete,
+	Todo
 }
 
 export const RoutesContext = createContext(routeConfig);
