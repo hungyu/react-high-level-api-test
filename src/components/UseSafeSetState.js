@@ -6,11 +6,11 @@ const useSafeState = (initialState) => {
 
 	useEffect(() => {
 		isMountedRef.current = true
-
+		console.log('call use effect');
 		return () => {
 			isMountedRef.current = false
 		} 
-	}, [isMountedRef, initialState]);
+	}, [isMountedRef]);
 
 	const safeSetState = (...args) => isMountedRef.current ? setState(...args) : () => {}
 
@@ -18,8 +18,9 @@ const useSafeState = (initialState) => {
 }
 
 const WrapperComponent = props => {
+	console.log('call wrapped component');
 	const [state, setState] = useSafeState(0);
-
+	console.log('call wrapped component 2');
 	return (
 		<div>
 			<div>count: {state}</div>
