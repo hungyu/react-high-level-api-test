@@ -1,3 +1,4 @@
+// https://medium.com/@francisrochon/you-need-to-keep-track-of-the-mounted-state-of-your-component-heres-a-quick-example-55b9f059230a
 import React, { useState, useEffect, useRef } from 'react'
 
 const useSafeState = (initialState) => {
