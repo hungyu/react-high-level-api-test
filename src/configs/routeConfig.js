@@ -26,9 +26,14 @@ import Todo from '../components/ReduxImplementation/Todo';
 
 // use effect test
 import UseEffectTest from '../components/UseEffectTest';
-
+import UseSafeSetState from '../components/UseSafeSetState';
 
 const routeConfig = [
+	{
+		path: '/use-safe-set-state',
+		component: 'UseSafeSetState',
+		name: 'use safe set state'
+	},
 	{
 		path: '/use-effect-test',
 		component: 'UseEffectTest',
@@ -133,7 +138,8 @@ export const routesMap = {
 	Timer,
 	AutoComplete,
 	Todo,
-	UseEffectTest
+	UseEffectTest,
+	UseSafeSetState
 }
 
 export const RoutesContext = createContext(routeConfig);
