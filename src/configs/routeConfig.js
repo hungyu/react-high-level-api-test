@@ -24,7 +24,16 @@ import AutoComplete from '../components/AutoComplete/index';
 // reducx implementation
 import Todo from '../components/ReduxImplementation/Todo';
 
+// use effect test
+import UseEffectTest from '../components/UseEffectTest';
+
+
 const routeConfig = [
+	{
+		path: '/use-effect-test',
+		component: 'UseEffectTest',
+		name: 'combine clear effect and effect together'
+	},
 	{
 		path: '/todo-testing',
 		component: 'Todo',
@@ -123,7 +132,8 @@ export const routesMap = {
 	MoviePage,
 	Timer,
 	AutoComplete,
-	Todo
+	Todo,
+	UseEffectTest
 }
 
 export const RoutesContext = createContext(routeConfig);
