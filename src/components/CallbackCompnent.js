@@ -33,6 +33,8 @@ function doSomeThing({e, term}) {
 function Parent({ term }) {
 	const onItemClick = useCallback(
 		(e) => {
+			// 這行只有在item 被click會印
+			console.log('on item click ')
 			return doSomeThing({e, term})
 		},
 		[term]
@@ -40,6 +42,8 @@ function Parent({ term }) {
 	
 	const onItemClick2 = useMemo(
 		(e) => {
+			// 這行第一次就會跑進來印，因為 useMemo的term跟之前是不同的，所以memo的內容會先跑並記錄下來
+			console.log(123)
 			// 這邊看來拿不到e,
 			return doSomeThing.bind(this, {e, term})
 		},

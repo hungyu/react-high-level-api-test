@@ -28,7 +28,23 @@ import Todo from '../components/ReduxImplementation/Todo';
 import UseEffectTest from '../components/UseEffectTest';
 import UseSafeSetState from '../components/UseSafeSetState';
 
+import UseLayoutEffectTest from '../components/UseLayoutEffectTest';
+
+
+// use interseciton observer
+import IntersectionObserver from '../components/IntersectionObserver';
+
 const routeConfig = [
+	{
+		path: '/use-intersection-observer',
+		component: 'IntersectionObserver',
+		name: 'use intersectoin observer'
+	},
+	{
+		path: '/use-layout-effect-test',
+		component: 'UseLayoutEffectTest',
+		name: 'use effect vs use layout effect'
+	},
 	{
 		path: '/use-safe-set-state',
 		component: 'UseSafeSetState',
@@ -122,6 +138,7 @@ const routeConfig = [
 ];
 
 export const routesMap = {
+	IntersectionObserver,
 	Home,
 	PureComponentExp,
 	Memo,
@@ -139,7 +156,8 @@ export const routesMap = {
 	AutoComplete,
 	Todo,
 	UseEffectTest,
-	UseSafeSetState
+	UseSafeSetState,
+	UseLayoutEffectTest
 }
 
 export const RoutesContext = createContext(routeConfig);

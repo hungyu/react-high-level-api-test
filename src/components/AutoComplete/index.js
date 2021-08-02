@@ -4,12 +4,13 @@ function ListItem({ title, inputValue }) {
 	let updatedTitle = <span> {title} </span>;
 
 	if (inputValue) {
-		let ary = title.split(inputValue);
-		updatedTitle = [ary[0]];
-		updatedTitle.push(<b> {inputValue}</b>)
+		const idx = title.indexOf(inputValue)
+		if (idx !== -1) {
+			const left = title.substring(0, idx);
+			const right = title.substring(idx + inputValue.length)
 
-		for (let i = 1; i < ary.length; i++) {
-			updatedTitle.push(ary[i]);
+			updatedTitle = [left, <b>{inputValue}</b>, right]
+			console.log(updatedTitle)
 		}
 	}
 
