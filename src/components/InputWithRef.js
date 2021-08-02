@@ -49,6 +49,7 @@ function InputWithRef() {
 	return (
 		<div>
 			<input type="text" val={val} onChange={(e) => {setVal(e.target.value)}}/>
+			<br/>
 			ref create by createRef = {refFromCreateRef.current}
 			<div></div>
 			ref create by useRef = {refFromUseRef.current}
