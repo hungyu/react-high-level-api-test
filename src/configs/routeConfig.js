@@ -27,6 +27,8 @@ import Todo from '../components/ReduxImplementation/Todo';
 // use effect test
 import UseEffectTest from '../components/UseEffectTest';
 import UseSafeSetState from '../components/UseSafeSetState';
+import UsePrevious from '../components/UsePrevious';
+import UseToggle from '../components/UseToggle';
 
 import UseLayoutEffectTest from '../components/UseLayoutEffectTest';
 
@@ -35,6 +37,16 @@ import UseLayoutEffectTest from '../components/UseLayoutEffectTest';
 import IntersectionObserver from '../components/IntersectionObserver';
 
 const routeConfig = [
+	{
+		path: '/use-toggle',
+		component: 'UseToggle',
+		name: 'use toggle'
+	},
+	{
+		path: '/use-previous',
+		component: 'UsePrevious',
+		name: 'use previous'
+	},
 	{
 		path: '/use-intersection-observer',
 		component: 'IntersectionObserver',
@@ -157,7 +169,9 @@ export const routesMap = {
 	Todo,
 	UseEffectTest,
 	UseSafeSetState,
-	UseLayoutEffectTest
+	UseLayoutEffectTest,
+	UsePrevious,
+	UseToggle
 }
 
 export const RoutesContext = createContext(routeConfig);
