@@ -29,6 +29,7 @@ import UseEffectTest from '../components/UseEffectTest';
 import UseSafeSetState from '../components/UseSafeSetState';
 import UsePrevious from '../components/UsePrevious';
 import UseToggle from '../components/UseToggle';
+import UseMemoCompare from '../components/UseMemoCompare';
 
 import UseLayoutEffectTest from '../components/UseLayoutEffectTest';
 
@@ -37,6 +38,11 @@ import UseLayoutEffectTest from '../components/UseLayoutEffectTest';
 import IntersectionObserver from '../components/IntersectionObserver';
 
 const routeConfig = [
+	{
+		path: '/use-memo-compare',
+		component: 'UseMemoCompare',
+		name: 'use memo compare'
+	},
 	{
 		path: '/use-toggle',
 		component: 'UseToggle',
@@ -150,6 +156,7 @@ const routeConfig = [
 ];
 
 export const routesMap = {
+	UseMemoCompare,
 	IntersectionObserver,
 	Home,
 	PureComponentExp,
