@@ -33,11 +33,18 @@ import UseMemoCompare from '../components/UseMemoCompare';
 
 import UseLayoutEffectTest from '../components/UseLayoutEffectTest';
 
-
 // use interseciton observer
 import IntersectionObserver from '../components/IntersectionObserver';
 
+// web component
+import CustomizedComponent from '../components/WebComponent/CustomizedComponent';
+
 const routeConfig = [
+	{
+		path: '/web-component',
+		component: 'CustomizedComponent',
+		name: 'web component'
+	},
 	{
 		path: '/use-memo-compare',
 		component: 'UseMemoCompare',
@@ -178,7 +185,8 @@ export const routesMap = {
 	UseSafeSetState,
 	UseLayoutEffectTest,
 	UsePrevious,
-	UseToggle
+	UseToggle,
+	CustomizedComponent
 }
 
 export const RoutesContext = createContext(routeConfig);
